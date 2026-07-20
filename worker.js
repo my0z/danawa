@@ -18,9 +18,7 @@ const IT_CATEGORIES = [
 
 export default {
   async fetch() {
-    const results = [];
-
-    for (const category of IT_CATEGORIES) {
+    const tasks = IT_CATEGORIES.map(async (category) => {
       const targetUrl = `https://prod.danawa.com/list/?${category.cate}`;
 
       try {
@@ -32,23 +30,24 @@ export default {
         });
 
         if (!res.ok) {
-          results.push({ category: category.name, error: `status ${res.status}` });
-          continue;
+          return { category: category.name, error: `status ${res.status}` };
         }
 
         const html = await res.text();
         const names = extractProductNames(html);
 
-        results.push({
+        return {
           category: category.name,
           url: targetUrl,
           count: names.length,
           names
-        });
+        };
       } catch (e) {
-        results.push({ category: category.name, error: String(e) });
+        return { category: category.name, error: String(e) };
       }
-    }
+    });
+
+    const results = await Promise.all(tasks);
 
     return new Response(JSON.stringify(results, null, 2), {
       headers: { 'content-type': 'application/json; charset=utf-8' }
