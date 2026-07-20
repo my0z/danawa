@@ -6,7 +6,14 @@ const IT_CATEGORIES = [
   { name: '모니터', cate: 'cate=112757' },
   { name: '스마트폰', cate: 'cate=122515' },
   { name: '태블릿', cate: 'cate=12210596' },
-  { name: 'SSD', cate: 'cate=112760' }
+  { name: 'SSD', cate: 'cate=112760' },
+  { name: 'CPU', cate: 'cate=112747' },
+  { name: '메인보드', cate: 'cate=112751' },
+  { name: '그래픽카드', cate: 'cate=112753' },
+  { name: '키보드', cate: 'cate=112782' },
+  { name: '이어폰/헤드폰', cate: 'cate=11252453' },
+  { name: '웹캠', cate: 'cate=11253489' },
+  { name: '공유기', cate: 'cate=112804' }
 ];
 
 export default {
