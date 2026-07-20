@@ -2,11 +2,11 @@
 // GET / 호출 시 아래 IT_CATEGORIES 목록을 순회하며 상품명만 수집
 
 const IT_CATEGORIES = [
-  { name: '노트북', cate: 'cate=112757' },
-  { name: '모니터', cate: 'cate=10240' },
-  { name: '스마트폰', cate: 'cate=15453250' },
-  { name: '태블릿', cate: 'cate=1985' },
-  { name: 'SSD', cate: 'cate=112763' }
+  { name: '노트북', cate: 'cate=112758' },
+  { name: '모니터', cate: 'cate=112757' },
+  { name: '스마트폰', cate: 'cate=122515' },
+  { name: '태블릿', cate: 'cate=12210596' },
+  { name: 'SSD', cate: 'cate=112760' }
 ];
 
 export default {
